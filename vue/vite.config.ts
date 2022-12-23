@@ -18,7 +18,9 @@ export default defineConfig({
         '!**/node_modules/@starport/vue/src/**',
         '!**/node_modules/@starport/vuex/src/**'
       ]
-    }
+    },
+    host: '0.0.0.0',
+
   },
   plugins: [vue(), nodeResolve(), dynamicImport(), envCompatible()],
   optimizeDeps: {
@@ -31,3 +33,6 @@ export default defineConfig({
     ]
   }
 })
+
+
+

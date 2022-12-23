@@ -1,16 +1,34 @@
 accounts:
   - name: alice
-    coins: ["20000token", "200000000stake"]
+    coins: ['200000000usln']
   - name: bob
-    coins: ["10000token", "100000000stake"]
+    coins: ['100000000usln']
 validator:
   name: alice
-  staked: "100000000stake"
+  staked: '100000000usln'
 client:
   openapi:
-    path: "docs/static/openapi.yml"
+    path: 'docs/static/openapi.yml'
   vuex:
-    path: "vue/src/store"
+    path: 'vue/src/store'
 faucet:
   name: bob
-  coins: ["5token", "100000stake"]
+  coins: ['100000usln']
+genesis:
+  app_state:
+    bank:      
+      denom_metadata:
+        - description: "The native staking token of your blockchain"
+          display: "sln"
+          base: "usln"
+          name: "Selenian"
+          symbol: "SLN"
+          denom_units:
+            - denom: "usln"
+              exponent: "0"
+            - denom: "sln"
+              exponent: "6"
+    staking:
+      params:
+        bond_denom: 'usln'
+

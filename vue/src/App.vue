@@ -37,7 +37,17 @@ export default {
 
     // lh
     onBeforeMount(async () => {
-      await $s.dispatch('common/env/init')
+      await $s.dispatch('common/env/init',{
+        apiNode: 'http://45.76.140.86:1317',
+        rpcNode: 'http://45.76.140.86:26657',
+        wsNode: 'ws://45.76.140.86:26657/websocket',
+        addrPrefix: 'cosmos',
+        sdkVersion: 'Stargate',
+        getTXApi: 'http://45.76.140.86:26657/tx?hash=0x',
+        offline: false,
+        refresh: 5000
+      })
+
 
       router.push('portfolio')
     })
